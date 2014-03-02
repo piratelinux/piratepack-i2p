@@ -15,9 +15,9 @@ cd "$localdir"
 username1=""
 while [ x"$username1" == x"" ]
 do
-    username1="$(dd if=/dev/random bs=1 count=10 2>/dev/null | tr -dc '[:lower:]' | head -c 1)"
+    username1="$(dd if=/dev/random bs=1 count=6 2>/dev/null | tr -dc '[:alpha:]' | head -c 1)"
 done
-username2="$(dd if=/dev/random bs=1 count=50 2>/dev/null | tr -dc '[:alnum:]' | tr -d '[:upper:]' | head -c 7)"
+username2="$(dd if=/dev/random bs=1 count=30 2>/dev/null | tr -dc '[:alnum:]' | head -c 7)"
 username="$username1""$username2"
 tar -xzf "$maindir"/share/i2p-browser/purple.tar.gz
 cd .purple
