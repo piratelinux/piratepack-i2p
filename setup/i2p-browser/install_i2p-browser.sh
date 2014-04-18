@@ -11,7 +11,8 @@ then
 
     if [ -z "$JAVA_HOME" ]
     then
-	export JAVA_HOME=$(readlink -f "$(which javac)" | sed "s:/bin/javac::")
+	#export JAVA_HOME=$(readlink -f "$(which javac)" | sed "s:/bin/javac::")
+	export JAVA_HOME=$(java-config --jdk-home)
     fi
 
     tar -xzf JRobinLite-1.5.9.1.tar.gz
