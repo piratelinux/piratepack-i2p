@@ -51,7 +51,7 @@ then
     fi
 
     mkdir -p ../i2p-patch/installer/lib/wrapper/"$wrapperpath"
-    strip --strip-unneeded bin/wrapper lib/libwrapper.so
+    #strip --strip-unneeded bin/wrapper lib/libwrapper.so
     chmod 644 bin/wrapper lib/libwrapper.so
     cp lib/libwrapper.so ../i2p-patch/installer/lib/wrapper/"$wrapperpath"/
     cp bin/wrapper ../i2p-patch/installer/lib/wrapper/"$wrapperpath"/i2psvc
@@ -111,31 +111,6 @@ mv i2p-irc_tmp i2p-irc
 
 cp i2p-irc  "$maindir"/share/i2p-browser_build/
 chmod a+x "$maindir"/share/i2p-browser_build/i2p-irc
-
-if [ -d "$maindir"/bin ] && [ ! -e "$maindir"/bin/eepget ]
-then
-    ln -s "$maindir"/share/i2p-browser_build/eepget "$maindir"/bin/eepget
-fi
-
-if [ -d "$maindir"/bin ] && [ ! -e "$maindir"/bin/i2prouter ]
-then
-    ln -s "$maindir"/share/i2p-browser_build/i2prouter "$maindir"/bin/i2prouter
-fi
-
-if [ -d "$maindir"/bin ] && [ ! -e "$maindir"/bin/i2psvc ]
-then
-    ln -s "$maindir"/share/i2p-browser_build/i2psvc "$maindir"/bin/i2psvc
-fi
-
-if [ -d "$maindir"/bin ] && [ ! -e "$maindir"/bin/i2p-browser ]
-then
-    ln -s "$maindir"/share/i2p-browser_build/i2p-browser "$maindir"/bin/i2p-browser
-fi
-
-if [ -d "$maindir"/bin ] && [ ! -e "$maindir"/bin/i2p-irc ]
-then
-    ln -s "$maindir"/share/i2p-browser_build/i2p-irc "$maindir"/bin/i2p-irc
-fi
 
 echo "Exec=$maindir_fin/bin/i2p-browser" >> i2p-browser.desktop
 cp i2p-browser.desktop "$maindir/share/i2p-browser/"
