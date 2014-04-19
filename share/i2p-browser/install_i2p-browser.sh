@@ -102,9 +102,13 @@ if [ ! -d icons ]
  then mkdir icons
 fi
 cp "$curdir/i2p-browser.png" icons
+echo "$homedir"/.local/share/icons/i2p-browser.png >> "$localdir"/.installed
 cp "$curdir/i2p-irc.png" icons
+echo "$homedir"/.local/share/icons/i2p-irc.png >> "$localdir"/.installed
 if [ ! -d applications ]
  then mkdir applications
 fi
 cp "$curdir/i2p-browser.desktop" applications
+echo "$homedir"/.local/share/applications/i2p-browser.desktop >> "$localdir"/.installed
 cp "$curdir/i2p-irc.desktop" applications
+echo "$homedir"/.local/share/applications/i2p-irc.desktop >> "$localdir"/.installed

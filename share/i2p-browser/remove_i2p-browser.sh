@@ -23,10 +23,4 @@ set +e
 chmod -Rf u+rw "$localdir"/* "$localdir"/.[!.]* "$localdir"/...*
 rm -rf "$localdir"/* "$localdir"/.[!.]* "$localdir"/...*
 
-rm -f .local/share/applications/i2p-browser.desktop
-rm -f .local/share/icons/i2p-browser.png
-
-rm -f .local/share/applications/i2p-irc.desktop
-rm -f .local/share/icons/i2p-irc.png
-
 set -e
